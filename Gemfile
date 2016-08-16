@@ -54,3 +54,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 
 #Gem below makes creating forms easier :)
 gem 'simple_form' 
+
+gem 'will_paginate', '~> 3.1.0'
