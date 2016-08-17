@@ -10,8 +10,8 @@
 
   <body>
   	<div id = "wrap">
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -20,22 +20,54 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/" style="color: #337AB7;">Ideator</a>
+        <a class="navbar-brand" href="/" style="color: #337AB7;"><i class="fa fa-lightbulb-o  fa-2x" aria-hidden="true"></i>Ideator</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'All Ideas', root_path %></li>
           <li><%= link_to 'Inspire Me', random_path %></li>
           <li><%=link_to 'About',about_path %></li>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="myModalLabel">Post Your Idea</h4>
+      </div>
+      <%= simple_form_for Idea.new do |f| %>
+        <div class="modal-body">
+          <%= f.input :description %>
+          <%= f.input :author %>
+        </div>      
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+              <i class="fa fa-pencil" aria-hidden="true"></i> Post
+            <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
   <div class = "container">
-    <%= yield %>
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6">
+        <%= yield %>
+      </div>
+      <div class="col-md-3">
+      </div>
+    </div>
   </div>
   
 </div>
@@ -43,23 +75,30 @@
 <footer class="footer text-center">
   <div class="container">
     <div class = "row">
-      <div class = "col-xs-12 col-md-4">
-        <h4>Contact</h4>
-        <p>contact@techrise.me</p>
+      <div class="col-md-3">
       </div>
-      <div class = "col-xs-12 col-md-4">
-        <h4>Find Us</h4>
-        <div class="social-buttons">
-          <a href = "#"><i class="fa fa-facebook-official social" ></i></a>
-          <a href = "#"><i class="fa fa-twitter-square social" ></i></a>
-          <a href = "#"><i class="fa fa-linkedin-square social" ></i></a>
+      <div class="col-md-6">
+        <div class="row">
+          <div class = "col-xs-12 col-md-6">
+            <h4>Contact</h4>
+            <p>contact@techrise.me</p>
+          </div>
+          <div class = "col-xs-12 col-md-6">
+            <h4>© TECHRISE 2016</h4>
+            <p>All Rights Reserved</p>
+          </div>
+          <div class = "col-xs-12 col-md-12">
+            <h4>Find Us</h4>
+            <div class="social-buttons">
+              <a href = "#"><i class="fa fa-facebook-official social" ></i></a>
+              <a href = "#"><i class="fa fa-twitter-square social" ></i></a>
+              <a href = "#"><i class="fa fa-linkedin-square social" ></i></a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class = "col-xs-12 col-md-4">
-        <h4>© TECHRISE 2016</h4>
-        <p>All Rights Reserved</p>
+      <div class="col-md-3">
       </div>
-    </div>
   </div>
 </footer>
 

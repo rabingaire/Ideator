@@ -1,6 +1,9 @@
 <% if @idea.present? %>
-  <%= link_to 'Inspire Me', random_path, class: 'btn btn-primary btn-block' %>
-    
+  <div class="refresh-btn text-center">
+    <%= link_to  random_path, class: 'btn btn-primary' do %>
+      <i class="fa fa-refresh" aria-hidden="true"></i> Inspire Me 
+    <% end %>
+  </div>
   <div class="panel panel-default">
     <div class="panel-body">
       <blockquote>

@@ -16,3 +16,23 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar-brand {
+	letter-spacing: 5px;
+}
+.navbar-default {
+	height:80px;
+}
+
+.navbar-right {
+	margin-top:20px;
+}
+@media(max-width:767px){
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    	margin-top: 30px;
+    	background-color: ghostwhite;
+    	padding-bottom: 20px;
+	}
+}
+
+
