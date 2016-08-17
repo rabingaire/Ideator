@@ -17,6 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+html , body {
+	font-family: 'Cabin', sans-serif;
+	background-color:#f1f1f1;
+}
 .navbar-brand {
 	letter-spacing: 5px;
 }
@@ -27,6 +31,18 @@
 .navbar-right {
 	margin-top:20px;
 }
+
+.is-findus {
+	background-color: #566270;
+	color: #FFFFFF;
+	min-height: 100px;
+	padding: 20px;
+}
+.social-buttons a {
+	color: #FFFFFF;
+	padding:0 5px;
+}
+
 @media(max-width:767px){
 	.navbar-default .navbar-collapse, .navbar-default .navbar-form {
     	margin-top: 30px;

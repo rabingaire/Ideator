@@ -1,7 +1,9 @@
-<h1>Revise Idea</h1>
+<h1>Edit Idea</h1>
 
 <%= simple_form_for @idea, method: :patch do |f| %>
 <%= f.input :description %>
   <%= f.input :author %>
-  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    <i class="fa fa-pencil" aria-hidden="true"></i> Post
+  <% end %>
 <% end %>
